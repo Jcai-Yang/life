@@ -1,0 +1,48 @@
+{
+    "message": [
+       
+        {
+            "add_time": "2019-06-28T17:00:58.000Z",
+            "click": 0,
+            "id": 87,
+            "img_url": "http://img01.hua.com/uploadpic/newpic/9012451.jpg_220x240.jpg",
+            "market_price": 188,
+            "sell_price": 88,
+            "stock_quantity": 2,
+            "title": "鹏园重庆火锅四人份，快来尝鲜",
+            "zhaiyao": ""
+        },{
+            "add_time": "2019-06-28T17:00:58.000Z",
+            "click": 0,
+            "id": 87,
+            "img_url": "https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1561639889&di=c5212031ce93ce9f149f476f907b9a7b&src=http://image.tech-food.com/images/kndata/bpic/201601/20160127164249_8783.jpg",
+            "market_price": 188,
+            "sell_price": 88,
+            "stock_quantity": 2,
+            "title": "鹏园重庆火锅四人份，快来尝鲜",
+            "zhaiyao": ""
+        },
+        {
+            "add_time": "2019-06-28T17:19:30.000Z",
+            "click": 4,
+            "id": 89,
+            "img_url": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561649936659&di=e894efd0f5d8d9d44048a2af4a539134&imgtype=0&src=http%3A%2F%2Fxs3.op.xywy.com%2Fapi.iu1.xywy.com%2Fcms%2F20160122%2F5f81512e5ec7e575f8ddb7b98ef4211c72113.jpg",
+            "market_price": 199,
+            "sell_price": 99,
+            "stock_quantity": 60,
+            "title": "鹏园三楼鸡煲底料火锅，快来尝鲜",
+            "zhaiyao": ""
+        },
+         {
+            "add_time": "2019-06-28T17:19:30.000Z",
+            "click": 4,
+            "id": 89,
+            "img_url": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561649936659&di=e894efd0f5d8d9d44048a2af4a539134&imgtype=0&src=http%3A%2F%2Fxs3.op.xywy.com%2Fapi.iu1.xywy.com%2Fcms%2F20160122%2F5f81512e5ec7e575f8ddb7b98ef4211c72113.jpg",
+            "market_price": 199,
+            "sell_price": 99,
+            "stock_quantity": 60,
+            "title": "鹏园三楼鸡煲底料火锅，快来尝鲜",
+            "zhaiyao": ""
+        }],
+    "status": 0
+}
