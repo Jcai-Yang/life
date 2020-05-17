@@ -41,13 +41,17 @@
 
 <script>
 import goodslistjson from "../../json/goodslist.json";
+import { Toast } from "mint-ui";
 
 export default {
   data() {
     // data 是往自己组件内部，挂载一些私有数据的
     return {
       pageindex: 1, // 分页的页数
-      goodslist: [] // 存放商品列表的数组
+      allGoodslist:[],// 所有的商品列表
+      goodslist: [], // 仅加载的商品列表
+      pagesize:4, // 页容量
+      total:0 // 总页数
     };
   },
   created() {
@@ -55,12 +59,31 @@ export default {
   },
   methods: {
     getGoodsList() {
-   
-        this.goodslist =goodslistjson.message;
+      if(this.pageindex==1){
+      this.allGoodslist=JSON.parse(JSON.stringify(goodslistjson.message));
+      // 计算总页数
+      this.total = Math.ceil(this.allGoodslist.length / this.pagesize);
+      }
+      // 已开始只加载第一页的数据 pagesize=4条
+      // 加载更多：pagenum++ 
+      //     pagenum>total 提示没有数据
+      //     pagenum<=total 加载下一页数据
+      // 1=>4 2=>
+      // 每次加载更多 把allGoodslist前面四条过滤掉 
+      var arr = this.allGoodslist.filter((v,i)=>i<this.pagesize);
+      this.allGoodslist.splice(0,this.pagesize);
+      this.goodslist = [...this.goodslist,...arr];
     },
     getMore() {
       this.pageindex++;
-      this.getGoodsList();
+      // 先判断页码是否大于总页数
+      // if(this.pageindex>this.total){
+      //   Toast("没有商品啦");
+      //   return;
+      // }else{
+      // this.getGoodsList();
+      // }
+      this.pageindex > this.total?Toast("没有花儿啦") : this.getGoodsList();
     },
     goDetail(id) {
       // 使用JS的形式进行路由导航
@@ -105,6 +128,11 @@ export default {
     .title {
       font-size: 14px;
       margin: 20px;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
     }
 
     .info {

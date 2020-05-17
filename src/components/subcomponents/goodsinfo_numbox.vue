@@ -13,18 +13,22 @@
 
 <script>
 import mui from "../../lib/mui/js/mui.min.js";
+import { Toast } from "mint-ui";
 
 export default {
   mounted() {
     // 初始化数字选择框组件
     mui(".mui-numbox").numbox();
-    console.log(this.max);
+    console.log("最大库存："+this.max);
   },
   methods: {
     countChanged() {
       // 每当 文本框的数据被修改的时候，立即把 最新的数据，通过事件调用，传递给父组件
-      // console.log(this.$refs.numbox.value);
-      this.$emit("getcount", parseInt(this.$refs.numbox.value));
+      if(this.$refs.numbox.value>this.max){
+        this.$refs.numbox.value=this.max;
+        Toast("超过库存了！");
+      }
+      else this.$emit("getcount", parseInt(this.$refs.numbox.value));
     }
   },
   props: ["max"],

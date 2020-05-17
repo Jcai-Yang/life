@@ -97,7 +97,15 @@ export default {
     getGoodsInfo() {
       // 获取商品的信息
       if (goodslunbojson.status === 0) {
-      	this.goodsinfo = goodsinfojson.message[0];
+        var _this=this;
+        let gindex = 0;
+        goodsinfojson.message.forEach((v,i)=>{
+          if(v.id==_this.id){
+            gindex=i
+          }
+        })
+      	this.goodsinfo = goodsinfojson.message[gindex];
+        console.log(this.goodsinfo);
       }
      
     },
@@ -110,7 +118,9 @@ export default {
         id: this.id,
         count: this.selectedCount,
         price: this.goodsinfo.sell_price,
-        selected: true
+        selected: true,
+        img_url:this.goodsinfo.img_url,
+        title:this.goodsinfo.title
       };
       // 调用 store 中的 mutations 来将商品加入购物车
       this.$store.commit("addToCar", goodsinfo);
@@ -148,7 +158,6 @@ export default {
     getSelectedCount(count) {
       // 当子组件把 选中的数量传递给父组件的时候，把选中的值保存到 data 上
       this.selectedCount = count;
-      console.log("父组件拿到的数量值为： " + this.selectedCount);
     }
   },
   components: {

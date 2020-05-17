@@ -44,6 +44,8 @@ export default {
         }
       });*/
       this.newsinfo = newsinfojson.message[0];
+      this.newsinfo.click++;
+      console.log(this.newsinfo);
     }
   },
   components: {

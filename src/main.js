@@ -11,6 +11,7 @@ Vue.use(Vuex)
 
 // 每次刚进入 网站，肯定会 调用 main.js 在刚调用的时候，先从本地存储中，把 购物车的数据读出来，放到 store 中
 var car = JSON.parse(localStorage.getItem('car') || '[]')
+console.log(car);
 
 var store = new Vuex.Store({
   state: { // this.$store.state.***
@@ -26,7 +27,7 @@ var store = new Vuex.Store({
 
       // 假设 在购物车中，没有找到对应的商品
       var flag = false
-
+      console.log(goodsinfo);
       state.car.some(item => {
         if (item.id == goodsinfo.id) {
           item.count += parseInt(goodsinfo.count)
@@ -34,7 +35,6 @@ var store = new Vuex.Store({
           return true
         }
       })
-
       // 如果最终，循环完毕，得到的 flag 还是 false，则把商品数据直接 push 到 购物车中
       if (!flag) {
         state.car.push(goodsinfo)
