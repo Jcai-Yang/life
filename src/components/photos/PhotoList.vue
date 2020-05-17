@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       cates: [], // 所有分类的列表数组
-      list: [] // 图片列表的数组
+      list: []// 图片列表的数组
     };
   },
   created() {
@@ -57,8 +57,8 @@ export default {
       // 获取所有的图片分类
         if (photolistjson.status === 0) {
           // 手动拼接出一个最完整的 分类列表
-          photolistjson.message.unshift({ title: "全部", id: 0 });
-          this.cates = photolistjson.message;
+        //photolistjson.message.unshift({ title: "全部", id: 0 });
+        this.cates = photolistjson.message;     
         }
       
     },

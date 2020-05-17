@@ -2,7 +2,10 @@
   <div class="photoinfo-container">
     <h3>{{ photoinfo.title }}</h3>
     <p class="subtitle">
+    <!--
       <span>发表时间：{{ photoinfo.add_time | dateFormat }}</span>
+    -->
+     <span>发表时间：2019-09-09 14:31:02</span>
       <span>点击：{{ photoinfo.click }}次</span>
     </p>
 
@@ -55,6 +58,7 @@ export default {
             item.h = 400;
           });
           // 把完整的数据保存到 list 中
+          console.log(getthumimagesjson.message[0])
           this.list = getthumimagesjson.message;
         }
     }
